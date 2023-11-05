@@ -3,7 +3,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 const cors = require("cors");
 const database = require("./database");
-const assignmentRouter = require("./routes/assignment");
+const assignmentRoute = require("./routes/assignment");
+const submittedAssignmentRoute = require("./routes/submittedAssignment");
 require("dotenv").config();
 
 // Use middleware
@@ -13,8 +14,9 @@ app.use(express.json());
 // Database connection
 database();
 
-// application router
-app.use("/assignments", assignmentRouter);
+// application routes
+app.use("/assignments", assignmentRoute);
+app.use("/submittedAssignment", submittedAssignmentRoute);
 
 // Listen server
 app.listen(port, () => {

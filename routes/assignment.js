@@ -5,25 +5,25 @@ const getSingleAssignment = require("../controllers/assignments/getSingleAssignm
 const addSingleAssignment = require("../controllers/assignments/addSingleAssignment");
 const deleteAssignment = require("../controllers/assignments/deleteAssignment");
 const updateAssignment = require("../controllers/assignments/updateAssignment");
-const assignmentRouter = express.Router();
+const assignmentRoute = express.Router();
 
 // Get assignments by user email
-assignmentRouter.get("/user", getUserAssignments);
+assignmentRoute.get("/user", getUserAssignments);
 
 // Get assignment by id
-assignmentRouter.get("/:id", getSingleAssignment);
+assignmentRoute.get("/:id", getSingleAssignment);
 
 // Get all assignments
-assignmentRouter.get("/", getAssignments);
+assignmentRoute.get("/", getAssignments);
 
 // Add single assignment
-assignmentRouter.post("/", addSingleAssignment);
+assignmentRoute.post("/", addSingleAssignment);
 
 // Delete single assignment
-assignmentRouter.delete("/:id", deleteAssignment);
+assignmentRoute.delete("/:id", deleteAssignment);
 
 // Update assignment
-assignmentRouter.put("/:id", updateAssignment);
+assignmentRoute.put("/:id", updateAssignment);
 
 // Export router
-module.exports = assignmentRouter;
+module.exports = assignmentRoute;
