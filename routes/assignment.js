@@ -3,6 +3,7 @@ const getAssignments = require("../controllers/assignments/getAssignments");
 const getUserAssignments = require("../controllers/assignments/getUserAssignments");
 const getSingleAssignment = require("../controllers/assignments/getSingleAssignment");
 const addSingleAssignment = require("../controllers/assignments/addSingleAssignment");
+const deleteAssignment = require("../controllers/assignments/deleteAssignment");
 const assignmentRouter = express.Router();
 /********************/
 
@@ -17,6 +18,9 @@ assignmentRouter.get("/", getAssignments);
 
 // Add single assignment
 assignmentRouter.post("/", addSingleAssignment);
+
+// Delete single assignment
+assignmentRouter.delete("/:id", deleteAssignment);
 
 // Export router
 module.exports = assignmentRouter;
