@@ -10,7 +10,7 @@ const tokenGenerate = async (req, res) => {
       });
 
       // Set token in cookie
-      res.cookie("authToken", token, { maxAge: 216000, httpOnly: true });
+      res.cookie("authToken", token, { maxAge: 3600000, httpOnly: true });
       res.end();
    } catch {
       res.status(500).json({ message: "There was an server error" });

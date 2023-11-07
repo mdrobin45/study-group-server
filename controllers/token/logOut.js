@@ -3,6 +3,7 @@ const logOut = async (req, res) => {
       res.clearCookie("authToken", {
          path: "/",
          domain: "localhost",
+         maxAge: 1,
       });
       res.end();
    } catch {
