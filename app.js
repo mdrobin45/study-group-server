@@ -6,10 +6,12 @@ const database = require("./database");
 const assignmentRoute = require("./routes/assignment");
 const submittedAssignmentRoute = require("./routes/submittedAssignment");
 const rootRoute = require("./routes/root");
+const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 // Use middleware
 app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
+app.use(cookieParser());
 app.use(express.json());
 
 // Database connection
