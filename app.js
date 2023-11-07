@@ -5,6 +5,7 @@ const cors = require("cors");
 const database = require("./database");
 const assignmentRoute = require("./routes/assignment");
 const submittedAssignmentRoute = require("./routes/submittedAssignment");
+const rootRoute = require("./routes/root");
 require("dotenv").config();
 
 // Use middleware
@@ -15,6 +16,7 @@ app.use(express.json());
 database();
 
 // application routes
+app.use("/", rootRoute);
 app.use("/assignments", assignmentRoute);
 app.use("/submittedAssignment", submittedAssignmentRoute);
 

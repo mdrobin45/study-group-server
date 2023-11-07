@@ -4,7 +4,7 @@ const getUserSubmittedAssignments = async (req, res) => {
    try {
       const { email } = req.query;
       const result = await SubmittedAssignmentModel.find({
-         userEmail: email,
+         examineeEmail: email,
       }).populate("assignment");
       res.send(result);
    } catch {

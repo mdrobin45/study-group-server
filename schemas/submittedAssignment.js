@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const submittedAssignmentSchema = mongoose.Schema({
-   userEmail: { type: String },
-   userName: { type: String },
+   examineeEmail: { type: String },
+   examineeName: { type: String },
    pdfLink: { type: String },
    note: { type: String },
    obtainedMarks: { type: String },
