@@ -1,8 +1,9 @@
 const jwt = require("jsonwebtoken");
-const authUser = async (req, res, next) => {
+const verifyUser = async (req, res, next) => {
    try {
       const { email } = req.query;
       const { authToken } = req.cookies;
+      console.log(authToken);
       const decoded = await jwt.verify(authToken, process.env.JWT_SECRET);
       const { email: userEmail } = decoded;
       if (userEmail === email) {
@@ -12,8 +13,9 @@ const authUser = async (req, res, next) => {
          res.status(401).json({ message: "Authentication error" });
       }
    } catch (err) {
+      console.log(err);
       res.status(401).json({ message: "Authentication error" });
    }
 };
 
-module.exports = authUser;
+module.exports = verifyUser;
