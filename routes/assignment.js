@@ -6,10 +6,14 @@ const addSingleAssignment = require("../controllers/assignments/addSingleAssignm
 const deleteAssignment = require("../controllers/assignments/deleteAssignment");
 const updateAssignment = require("../controllers/assignments/updateAssignment");
 const verifyUser = require("../middlewares/verifyUser");
+const paginate = require("../controllers/paginate/paginate");
 const assignmentRoute = express.Router();
 
 // Get assignments by user email
 assignmentRoute.get("/user", verifyUser, getUserAssignments);
+
+// Get assignments by pagination
+assignmentRoute.get("/paginate", paginate);
 
 // Get assignment by id
 assignmentRoute.get("/:id", verifyUser, getSingleAssignment);

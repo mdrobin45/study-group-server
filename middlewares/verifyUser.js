@@ -3,7 +3,6 @@ const verifyUser = async (req, res, next) => {
    try {
       const { email } = req.query;
       const { authToken } = req.cookies;
-      console.log(authToken);
       const decoded = await jwt.verify(authToken, process.env.JWT_SECRET);
       const { email: userEmail } = decoded;
       if (userEmail === email) {
