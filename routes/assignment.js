@@ -7,6 +7,7 @@ const deleteAssignment = require("../controllers/assignments/deleteAssignment");
 const updateAssignment = require("../controllers/assignments/updateAssignment");
 const verifyUser = require("../middlewares/verifyUser");
 const paginate = require("../controllers/paginate/paginate");
+const addMultiple = require("../controllers/assignments/addMultiple");
 const assignmentRoute = express.Router();
 
 // Get assignments by user email
@@ -20,6 +21,9 @@ assignmentRoute.get("/:id", verifyUser, getSingleAssignment);
 
 // Get all assignments
 assignmentRoute.get("/", getAssignments);
+
+// Add multiple assignment
+assignmentRoute.post("/multiple", addMultiple);
 
 // Add single assignment
 assignmentRoute.post("/", verifyUser, addSingleAssignment);

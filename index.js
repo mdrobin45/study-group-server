@@ -11,7 +11,7 @@ require("dotenv").config();
 
 // Use middleware
 app.use(
-   cors({ credentials: true, origin: "https://group-study-6f611.web.app/" })
+   cors({ credentials: true, origin: "https://group-study-6f611.web.app" })
 );
 app.use(cookieParser());
 app.use(express.json());
