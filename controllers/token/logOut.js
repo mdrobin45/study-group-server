@@ -2,7 +2,7 @@ const logOut = async (req, res) => {
    try {
       res.clearCookie("authToken", {
          path: "/",
-         domain: "localhost",
+         domain: "group-study-6f611.web.app",
          maxAge: 1,
       });
       res.end();

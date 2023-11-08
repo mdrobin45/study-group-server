@@ -10,7 +10,9 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 // Use middleware
-app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
+app.use(
+   cors({ credentials: true, origin: "https://group-study-6f611.web.app/" })
+);
 app.use(cookieParser());
 app.use(express.json());
 
