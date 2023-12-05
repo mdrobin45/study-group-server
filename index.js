@@ -13,7 +13,7 @@ require("dotenv").config();
 app.use(
    cors({
       credentials: true,
-      origin: "https://assignment-11-robin45r.netlify.app",
+      origin: "https://study-group-robin45r.netlify.app",
    })
 );
 app.use(cookieParser());

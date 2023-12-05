@@ -11,6 +11,7 @@ const tokenGenerate = async (req, res) => {
 
       // Set token in cookie
       res.cookie("authToken", token, {
+         expireIn: 3600,
          httpOnly: true,
          secure: process.env.NODE_ENV === "production",
          sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
