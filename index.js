@@ -13,7 +13,7 @@ require("dotenv").config();
 app.use(
    cors({
       credentials: true,
-      origin: process.env.LIVE_SITE,
+      origin: process.env.LOCAL_SITE,
    })
 );
 
